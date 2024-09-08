@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-08T07:54:17.511Z",
+    "end": "2024-09-08T07:54:19.268Z",
+    "duration": 1757,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bad60718-143d-452b-9854-a3ff761e15d8",
+      "title": "",
+      "fullFile": "E:\\api-automation-test\\test\\test-api.js",
+      "file": "\\test\\test-api.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "49fa787f-06a5-4cd0-9b9f-269b2730487d",
+          "title": "Testing API for \"regres.in\"",
+          "fullFile": "E:\\api-automation-test\\test\\test-api.js",
+          "file": "\\test\\test-api.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test - GET List User",
+              "fullTitle": "Testing API for \"regres.in\" Test - GET List User",
+              "timedOut": false,
+              "duration": 210,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"users?page=2\");\n    assert.equal(response.statusCode, 200)\n    assert.equal(response.body[2])\n    expect(response.statusCode).to.equal(200)\n    const schemaPath = \"resources/jsonSchema/get-list-users-schema.json\"\n    const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\n    assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "867bce3c-680f-4600-92b9-0bef10d5ba28",
+              "parentUUID": "49fa787f-06a5-4cd0-9b9f-269b2730487d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - GET Single User",
+              "fullTitle": "Testing API for \"regres.in\" Test - GET Single User",
+              "timedOut": false,
+              "duration": 116,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"users/2\");\n    \n    assert.equal(response.statusCode, 200)\n    assert.equal(response.body[0])\n    expect(response.statusCode).to.equal(200)\n    const schemaPath = \"resources/jsonSchema/get-single-users-schema.json\"\n    const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\n    assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "c23d2b47-6ae5-4190-9bf6-6c5a79f4d7cd",
+              "parentUUID": "49fa787f-06a5-4cd0-9b9f-269b2730487d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - POST Create User",
+              "fullTitle": "Testing API for \"regres.in\" Test - POST Create User",
+              "timedOut": false,
+              "duration": 481,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n        .post(\"users\")\n        .send(\n            {\n                \"name\": \"Fina\",\n                \"job\": \"QA\"\n            }\n        )\n    \n        console.log(response.body)\n        should(response.statusCode === 200)\n        const schemaPath = \"resources/jsonSchema/post-users-schema.json\"\n        const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\n        assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "ef89d188-77ae-45a2-93bc-ff21dcd851c4",
+              "parentUUID": "49fa787f-06a5-4cd0-9b9f-269b2730487d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - PUT Update User",
+              "fullTitle": "Testing API for \"regres.in\" Test - PUT Update User",
+              "timedOut": false,
+              "duration": 486,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n        .put(\"users/2\")\n        .send(\n            {\n                \"name\": \"Alena\",\n                \"job\": \"Manager\"\n            }\n        )\n        assert.equal(response.statusCode, 200)\n        assert.equal(response.body[2])\n        const schemaPath = \"resources/jsonSchema/put-users-schema.json\"\n        const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\n        assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "945bb38c-e943-4c54-8965-1f14a68d66d1",
+              "parentUUID": "49fa787f-06a5-4cd0-9b9f-269b2730487d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - DELETE Update User",
+              "fullTitle": "Testing API for \"regres.in\" Test - DELETE Update User",
+              "timedOut": false,
+              "duration": 449,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n        .delete(\"users/2\")\n    \n        console.log(response.body)\n        assert.equal(response.statusCode, 204)",
+              "err": {},
+              "uuid": "779029f8-d09e-44a5-afce-41e245d38172",
+              "parentUUID": "49fa787f-06a5-4cd0-9b9f-269b2730487d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "867bce3c-680f-4600-92b9-0bef10d5ba28",
+            "c23d2b47-6ae5-4190-9bf6-6c5a79f4d7cd",
+            "ef89d188-77ae-45a2-93bc-ff21dcd851c4",
+            "945bb38c-e943-4c54-8965-1f14a68d66d1",
+            "779029f8-d09e-44a5-afce-41e245d38172"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1742,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
